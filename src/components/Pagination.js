@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Pagination({ goToPrevPage, goToNextPage }) {
   return (
-    <div>
+    <div className="button-bottom">
       {goToPrevPage && <button type="button" onClick={goToPrevPage}>Previous</button>}
       {goToNextPage && <button type="button" onClick={goToNextPage}>Next</button>}
     </div>
