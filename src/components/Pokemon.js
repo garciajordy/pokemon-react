@@ -6,7 +6,7 @@ function Pokemon({ name, url }) {
   const [pic, setPic] = useState();
   useEffect(() => {
     axios.get(url)
-      .then((res) => setPic(res.data.sprites.front_default));
+      .then((res) => setPic(res.data.sprites.front_default)).catch((error) => error);
   }, [url]);
 
   return (
@@ -19,6 +19,9 @@ function Pokemon({ name, url }) {
 
 Pokemon.propTypes = {
   name: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
+};
+Pokemon.defaultProps = {
+  url: null,
 };
 export default Pokemon;

@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="show"
+  >
+    <a
+      href="/"
+    >
+      Back
+    </a>
+    <div
+      class="poke"
+    >
+      <h2>
+        test
+      </h2>
+      <img
+        alt="test"
+        src="test"
+      />
+      <h1>
+        test
+      </h1>
+      <p>
+        <span>
+          Type: 
+        </span>
+        test
+      </p>
+      <p>
+        <span>
+          Height: 
+        </span>
+        NaN M
+      </p>
+      <p>
+        <span>
+          Weight: 
+        </span>
+        NaN KG
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

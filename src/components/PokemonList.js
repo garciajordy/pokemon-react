@@ -14,14 +14,11 @@ const PokemonList = ({ singlePokemon, addPokemons }) => {
   const [currentPageUrl, setCurrentPageUrl] = useState(apiUrl);
   const [nextPageUrl, setNextPageUrl] = useState();
   const [previousPageUrl, setPreviousPageUrl] = useState();
-  const [loading, setLoading] = useState(true);
   const [searchData, setSearchData] = useState();
 
   useEffect(() => {
-    setLoading(true);
     axios.get(currentPageUrl)
       .then((res) => {
-        setLoading(false);
         setNextPageUrl(res.data.next);
         setPreviousPageUrl(res.data.previous);
         setPokemon(res.data.results.map((p) => p));
@@ -57,7 +54,6 @@ const PokemonList = ({ singlePokemon, addPokemons }) => {
       });
   }
 
-  if (loading) return 'Loading...';
   return (
     <div>
       <div className="search-box">
