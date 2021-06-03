@@ -53,7 +53,6 @@ const PokemonList = ({ singlePokemon, addPokemons }) => {
   function handleClick() {
     axios.get(`${apiUrl}${searchData}`)
       .then((res) => {
-        console.log(res.data);
         singlePokemon(res.data);
       });
   }
