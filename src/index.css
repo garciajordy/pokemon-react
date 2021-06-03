@@ -5,9 +5,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://www.nintendo.com/content/dam/noa/en_US/wallpapers/pokemon/pokemon-2.jpg");
+  background-size: 100% 110%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.pokemon {
+  padding: 3rem;
+}
+
+.pokemon img {
+  transform: scale(1.5);
+}
+
+.pokeContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
