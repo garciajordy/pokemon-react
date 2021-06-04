@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div>
+      <div
+        class="search-box"
+      >
+        <input
+          placeholder="Search..."
+          tpye="text"
+        />
+         Write the exact name
+      </div>
+      <div
+        class="pokeContainer"
+      />
+      <div
+        class="button-bottom"
+      >
+        First PageLast Page
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
