@@ -2,6 +2,8 @@
 
 In this project I created a Pokemon App where you can see all the pokemon's and search them by name to see all their stats using the PokeAPI.
 
+![image](https://user-images.githubusercontent.com/74253475/120748575-aea08680-c50b-11eb-9c51-8915525e2949.png)
+
 ## Built With
 
 - React
