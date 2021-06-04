@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
-function Pokemon({ name, url }) {
+function Pokemon({ name, url, handleClick }) {
   const [pic, setPic] = useState();
   useEffect(() => {
     axios.get(url)
@@ -11,7 +12,7 @@ function Pokemon({ name, url }) {
 
   return (
     <div className="pokemon">
-      <h3>{name}</h3>
+      <Link to="show" onClick={() => handleClick(name)}>{name}</Link>
       <img src={pic} alt={name} />
     </div>
   );
@@ -20,6 +21,7 @@ function Pokemon({ name, url }) {
 Pokemon.propTypes = {
   name: PropTypes.string.isRequired,
   url: PropTypes.string,
+  handleClick: PropTypes.func.isRequired,
 };
 Pokemon.defaultProps = {
   url: null,

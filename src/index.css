@@ -43,10 +43,12 @@ code {
   width: 250px;
   border-radius: 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .pokemon img {
-  transform: scale(1.5);
+  transform: scale(1);
 }
 
 .pokeContainer {

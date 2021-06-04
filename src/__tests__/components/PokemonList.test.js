@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, cleanup, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import PokemonList from '../../components/PokemonList';
+import PokemonList from '../../containers/PokemonList';
 import store from '../../store/index';
 
 afterEach(cleanup);

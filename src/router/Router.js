@@ -5,7 +5,7 @@ import {
   Switch,
 } from 'react-router-dom';
 import App from '../components/App';
-import Show from '../components/Show';
+import Show from '../containers/Show';
 
 const Routes = () => (
   <BrowserRouter>

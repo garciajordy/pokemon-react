@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import Pokemon from './Pokemon';
-import Pagination from './Pagination';
+import Pokemon from '../components/Pokemon';
+import Pagination from '../components/Pagination';
 import { singlePokemon, addPokemons } from '../actions';
 
 const apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
@@ -47,8 +46,8 @@ const PokemonList = ({ singlePokemon, addPokemons }) => {
     return pokemon;
   }
 
-  function handleClick() {
-    axios.get(`${apiUrl}${searchData}`)
+  function handleClick(pokemonName) {
+    axios.get(`${apiUrl}${pokemonName}`)
       .then((res) => {
         singlePokemon(res.data);
       });
@@ -58,18 +57,19 @@ const PokemonList = ({ singlePokemon, addPokemons }) => {
     <div>
       <div className="search-box">
         <input onChange={(e) => setSearchData(e.target.value)} tpye="text" placeholder="Search..." />
-        {searchData && allPokemons.some((poke) => (poke.name.toUpperCase() === searchData.toUpperCase())) ? <Link onClick={handleClick} to="show">Search</Link> : ' Write the exact name'}
 
       </div>
       <div className="pokeContainer">
         {filteredPokemons().map((poke) => (
-          <Pokemon key={poke.name} name={poke.name} url={poke.url} />
+          <Pokemon key={poke.name} handleClick={handleClick} name={poke.name} url={poke.url} />
         ))}
       </div>
-      <Pagination
-        goToNextPage={nextPageUrl ? goToNextPage : null}
-        goToPrevPage={previousPageUrl ? goToPrevPage : null}
-      />
+      {searchData ? '' : (
+        <Pagination
+          goToNextPage={nextPageUrl ? goToNextPage : null}
+          goToPrevPage={previousPageUrl ? goToPrevPage : null}
+        />
+      )}
     </div>
   );
 };
